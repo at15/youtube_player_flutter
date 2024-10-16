@@ -134,7 +134,10 @@ class _YoutubePlayerState extends State<YoutubePlayer>
 
   void _updateBackgroundColor(Color? backgroundColor) {
     final bgColor = backgroundColor ?? Theme.of(context).colorScheme.surface;
-    _controller.webViewController.setBackgroundColor(bgColor);
+    // https://github.com/sarbagyastha/youtube_player_flutter/issues/624
+    // https://github.com/flutter/flutter/issues/153773
+    // _controller.webViewController.setBackgroundColor(bgColor);
+    print('Disable setting backgroudn color for macos');
   }
 
   Future<void> _initPlayer() async {
